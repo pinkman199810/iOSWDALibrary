@@ -1,0 +1,4 @@
+facebook-wda==1.4.6
+robotframework==6.0.1
+rpaframework-core==10.0.1
+rpaframework-recognition==5.0.0

@@ -5,7 +5,6 @@ import sys
 import os.path
 from RPA.recognition import templates
 from wda.exceptions import WDAElementNotFoundError
-from Configurations import Configurations
 from robot.api import logger
 from robot.api.deco import keyword
 from robot.libraries.BuiltIn import BuiltIn
@@ -16,7 +15,6 @@ class iOSWDALibrary(object):
     """Robot framework library for iOS UI test automation."""
     ROBOT_LISTENER_API_VERSION = 3
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
-    config_file = Configurations()
 
     def __init__(self):
         self.ROBOT_LIBRARY_LISTENER = self
@@ -758,10 +756,9 @@ class iOSWDALibrary(object):
         return self.session(value=_value)
 
 if __name__ == "__main__":
-    config_file = Configurations()
     try:
         test_lib = iOSWDALibrary()
         # test_lib.open_application('com.daimler.ris.mercedesme.cn.ios.stage')
-        test_lib.temp_wda_session(wda_url='http://53.88.199.75:7633')
+        test_lib.temp_wda_session(wda_url='http://serverurl:prot')
     except Exception:
         raise
