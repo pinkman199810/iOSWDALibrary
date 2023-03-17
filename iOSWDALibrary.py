@@ -34,7 +34,7 @@ class iOSWDALibrary(object):
         """Opens a new application to given wda server.
 
         Examples:
-        | Open Application | wda_url=http://53.88.199.148:7603 | bundle_id=com.daimler.ris.mercedesme.cn.ios.stage
+        | Open Application | wda_url=http://internalserver:port | bundle_id=com.daimler.ris.mercedesme.cn.ios.stage
         """
         self.client = wda.Client(wda_url)
         self.client.wait_ready(timeout=10, noprint=False)
@@ -662,12 +662,12 @@ class iOSWDALibrary(object):
         """Running iOS wda session without using stf api locally
 
         Args:
-         - wda_url(STF) - WebDriverAgentUrl of iOS device control page,Example:http://53.88.199.148:7601
+         - wda_url(STF) - WebDriverAgentUrl of iOS device control page,Example:http://internalserver:port
          - wda_url(Local) - http://127.0.0.1:8100
          - boundle_ID - Unique identification of iOS software,use: 'ideviceinstaller -l' to view app list in iPhone
 
         Example:
-        | Temp WDA Session | wda_url=http://53.88.199.148:7601 | boundle_ID=com.daimler.ris.mercedesme.cn.ios.stage |
+        | Temp WDA Session | wda_url=http://internalserver:port | boundle_ID=com.daimler.ris.mercedesme.cn.ios.stage |
         | Click Element    | name=更多 |
         """
         self.client = wda.Client(wda_url)
